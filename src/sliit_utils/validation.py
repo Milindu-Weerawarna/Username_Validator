@@ -8,7 +8,7 @@ def validate_username(username: str) -> tuple[bool, str | None]:
     if not isinstance(username, str):
         return False, "Username must be a string"
 
-    if username == "":
+    if username.strip() == "":
         return False, "Username is required"
 
     if len(username) < MIN_USERNAME_LENGTH:

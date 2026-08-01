@@ -11,6 +11,10 @@ def test_rejects_empty_username():
     assert validate_username("") == (False, "Username is required")
 
 
+def test_rejects_whitespace_only_username():
+    assert validate_username("   ") == (False, "Username is required")
+
+
 def test_rejects_short_username():
     valid, message = validate_username("ab")
 
